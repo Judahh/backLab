@@ -7,24 +7,6 @@ import {
     APIGatewayProxyEventBase,
 } from 'aws-lambda';
 
-class LambdaError extends Error {
-    errorMessage: string;
-    type: string;
-    errorType: string;
-    statusCode: number;
-    body: string;
-
-    constructor(message: string, type: string, statusCode?: number, body?: string) {
-        super(message);
-        this.name = 'LambdaError';
-        this.errorMessage = message;
-        this.type = type;
-        this.errorType = type;
-        this.statusCode = statusCode || 500;
-        this.body = body || message;
-    }
-}
-
 /**
  * @example <caption>HTTP Request with Callback</caption>
  * import { Handler } from 'aws-lambda'
